@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Cá Nhân Khách Hàng</title>
+  <style>
+    body {
+  /* Đường dẫn tới hình ảnh nền */
+  background-image: url('2.jpg');
+  /* Tùy chọn: giữ cho hình ảnh nền đầy đủ chiều cao và chiều rộng của cửa sổ trình duyệt */
+  background-size: cover;
+  /* Tùy chọn: đảm bảo hình ảnh nền không lặp lại */
+  background-repeat: no-repeat;
+  /* Tùy chọn: giữ cho nền màu của trang là một phần của hình ảnh (nếu hình ảnh không đầy đủ chiều cao và chiều rộng) */
+  background-position: center center;
+  /* Tùy chọn: màu nền fallback nếu hình ảnh không tải được hoặc không tồn tại */
+  background-color: #f8f9fa;
+  /* Tùy chọn: áp dụng hiệu ứng chuyển động cho hình ảnh nền */
+  transition: background-image 0.5s ease-in-out;
+}
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #495057;
+      transition: background-color 0.5s;
+    }
+
+    header {
+      color: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.5s;
+    }
+
+    nav {
+      padding: 10px;
+      text-align: center;
+      transition: background-color 0.5s;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    .container {
+      margin: auto;
+      max-width: 800px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      transition: box-shadow 0.5s;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    h2 {
+      color: rgb(69, 70, 71);
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .profile-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile-image {
+      margin-right: 20px;
+    }
+
+    .profile-details {
+      flex-grow: 1;
+    }
+
+    footer {
+
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    button {
+      background-color: rgb(69, 70, 71);
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-right: 10px;
+    }
+
+    button:hover {
+      background-color: rgb(199, 50, 75);
+    }
+
+    .action-buttons {
+      margin-top: 20px;
+    }
+
+    .action-buttons button {
+      margin-right: 10px;
+    }
+
+    .profile-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      align-items: center;
+    }
+
+    .voucher-button {
+      background-color: rgb(235, 4, 4);
+      color: #fff;
+      padding: 15px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .voucher-button:hover {
+      background-color: #c9306d;
+    }
+
+    .voucher {
+      background-color: #e83e8c;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+    }
+
+    .voucher.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Trang Cá Nhân Khách Hàng</h1>
+  </header>
+
+  <nav>
+    <a href="#">Trang chủ</a>
+    <a href="#">Đã thích</a>
+    <a href="#">Đơn hàng</a>
+    <a href="#">Ưu đãi</a>
+    <a href="#">Hỗ trợ</a>
+  </nav>
+
+  <div class="container">
+    <button id="backButton">Quay lại</button>
+    
+    <div class="profile-info">
+      <div class="profile-image">
+        <img src="1.jpg" alt="Hình ảnh khách hàng">
+      </div>
+      <div class="profile-details">
+        <h2>Thông tin cá nhân</h2>
+        <p><strong>Họ và tên:</strong> Nguyễn Văn A</p>
+        <p><strong>Email:</strong> nguyena@example.com</p>
+        <p><strong>Số điện thoại:</strong> +123 456 789</p>
+        <p><strong>Địa chỉ:</strong> 123 Street, City</p>
+      </div>
+    </div>
+
+    <div class="profile-actions">
+      <div class="action-buttons">
+        <button id="likeButton">Đã thích</button>
+        <button id="settingsButton">Thiết lập tài khoản</button>
+        <button id="themeButton">Cài đặt nền giao diện</button>
+        <button id="followButton">Shop đang theo dõi</button>
+      </div>
+      <div>
+        <button id="voucherButton" class="voucher-button">Voucher</button>
+      </div>
+    </div>
+
+    <div class="voucher" id="voucher">
+      <p>Giảm giá 10% cho đơn hàng tiếp theo của bạn!</p>
+    </div>
+
+    <h2>Đơn hàng gần đây</h2>
+    <p>Chưa có đơn hàng nào.</p>
+
+  </div>
+
+  
+
+  <!-- <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Lấy button quay lại
+      const backButton = document.getElementById('backButton');
+
+      // Lấy các button khác
+      const likeButton = document.getElementById('likeButton');
+      const settingsButton = document.getElementById('settingsButton');
+      const themeButton = document.getElementById('themeButton');
+      const followButton = document.getElementById('followButton');
+      const voucherButton = document.getElementById('voucherButton');
+
+      // Lấy voucher
+      const voucher = document.getElementById('voucher');
+
+      // Thêm sự kiện click cho button quay lại
+      backButton.addEventListener('click', function() {
+        // Quay lại trang trước đó
+        window.history.back();
+      });
+
+      // Thêm sự kiện click cho các button khác
+      likeButton.addEventListener('click', function() {
+        alert('Đã thích!');
+      });
+
+      settingsButton.addEventListener('click', function() {
+        alert('Thiết lập tài khoản');
+      });
+
+      themeButton.addEventListener('click', function() {
+        alert('Cài đặt nền giao diện');
+      });
+
+      followButton.addEventListener('click', function() {
+        alert('Shop đang theo dõi');
+      });
+
+      voucherButton.addEventListener('click', function() {
+        voucher.classList.toggle('show');
+      });
+    });
+  </script> -->
+
+</body>
+</html>

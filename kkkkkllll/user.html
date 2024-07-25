@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My web</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      /* Đường dẫn tới hình ảnh nền */
+      background-image: url('2.jpg');
+      /* Tùy chọn: giữ cho hình ảnh nền đầy đủ chiều cao và chiều rộng của cửa sổ trình duyệt */
+      background-size: cover;
+      /* Tùy chọn: đảm bảo hình ảnh nền không lặp lại */
+      background-repeat: no-repeat;
+      /* Tùy chọn: giữ cho nền màu của trang là một phần của hình ảnh (nếu hình ảnh không đầy đủ chiều cao và chiều rộng) */
+      background-position: center center;
+      /* Tùy chọn: màu nền fallback nếu hình ảnh không tải được hoặc không tồn tại */
+      background-color: #f8f9fa;
+      /* Tùy chọn: áp dụng hiệu ứng chuyển động cho hình ảnh nền */
+      transition: background-image 0.5s ease-in-out;
+      }
+
+    header {
+      background-color: #343a40;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #007bff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      margin: auto;
+      max-width: 800px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    form {
+      text-align: left;
+    }
+
+    h2 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #495057;
+    }
+
+    input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+    }
+
+    input[type="file"] {
+      margin-top: 10px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .error-message {
+      color: #dc3545;
+      margin-top: 5px;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>web ban do an</h1>
+  </header>
+
+  <nav>
+    <a href="#">Trang chủ</a>
+    <a href="#customerInfo">Thông tin khách hàng</a>
+    <a href="#customerInfo">Thông tin khách hàng</a>
+    <a href="#customerInfo">Thông tin khách hàng</a>
+    <a href="#customerInfo">Thông tin khách hàng</a>
+  </nav>
+
+  <div class="container" id="customerInfo">
+    <form id="customerForm" enctype="multipart/form-data">
+      <h2>Thông tin khách hàng</h2>
+
+      <label for="name">Họ và tên:</label>
+      <input type="text" id="name" name="name" placeholder="Nhập họ và tên" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Nhập địa chỉ email" required>
+
+      <label for="phone">Số điện thoại:</label>
+      <input type="tel" id="phone" name="phone" pattern="\d{9,12}" title="Vui lòng nhập từ 9 đến 12 chữ số" placeholder="Nhập số điện thoại" required>
+      <span class="error-message" id="phoneError"></span>
+
+      <label for="address">Địa chỉ:</label>
+      <input type="text" id="address" name="address" placeholder="Nhập địa chỉ" required>
+
+      <label for="avatar">Hình ảnh khách hàng:</label>
+      <input type="file" id="avatar" name="avatar" accept="image/*" placeholder="Chọn hình ảnh">
+
+      <button type="button" onclick="validateForm()">Gửi thông tin</button>
+    </form>
+  </div>
+
+
+  <!-- <script>
+    function validateForm() {
+      var phoneInput = document.getElementById('phone');
+      var phoneError = document.getElementById('phoneError');
+      var phonePattern = /\d{9,12}/;
+
+      if (!phonePattern.test(phoneInput.value)) {
+        phoneError.textContent = 'Số điện thoại không hợp lệ.';
+        phoneInput.focus();
+        return false;
+      } else {
+        phoneError.textContent = '';
+        // Điều hướng đến trang cá nhân (trong ví dụ này là customer-profile.html)
+        window.location.href = 'customer-profile.html';
+        return false; // Để tránh gửi form mặc định của trình duyệt
+      }
+    }
+  </script> -->
+
+</body>
+</html>
